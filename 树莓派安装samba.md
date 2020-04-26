@@ -64,4 +64,4 @@ sudo chmod -R 777 Samba
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters] 
 "AllowInsecureGuestAuth"=dword:1
 ```
-最后运行 `\\IP\MyShare` 即可访问。
+最后运行 `\\IP地址\MyShare` 即可访问。
