@@ -1,16 +1,16 @@
-### 一、安装并配置samba
-#### （一）安装Samba
+### 安装并配置samba
+#### 安装Samba
 ```
 sudo apt-get install samba    
 sudo apt-get install samba-common-bin
 ```
-#### （二）配置Samba
+#### 配置Samba
 1、编辑配置文件
 ````
 sudo nano /etc/samba/smb.conf
 ````
 2、修改配置文件
-找到Share Definitions节[homes]部分：将read only = yes行改为read only = no 
+找到Share Definitions节[homes]部分：将`read only = yes` 行改为`read only = no`
 在文件末尾加入如下内容：
 ```
 [MyShare] 
@@ -41,20 +41,20 @@ guest ok = yes 
 ```
 sudo smbpasswd -a pi
 ```
-#### （三） 启动服务
+#### 启动服务
 ```
 sudo /etc/init.d/smbd restart
 sudo /etc/init.d/nmbd restart
 ```
 
-### 二、创建共享文件目录
+### 创建共享文件目录
 ```
 cd /
 sudo mkdir  Samba
 sudo chmod -R 777 Samba
 ```
 
-### 三、配置PC端的来宾访问
+### 配置PC端的来宾访问
 运行组策略编辑器`gpedit.msc`
 ```
 计算机配置 - 管理模板 - 网络 - Lanman 工作站 - 启用不安全的来宾登录
